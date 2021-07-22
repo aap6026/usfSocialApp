@@ -1,0 +1,7 @@
+{
+  "name": "usfSocialApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}
