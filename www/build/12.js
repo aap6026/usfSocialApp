@@ -1,15 +1,14 @@
 webpackJsonp([12],{
 
-/***/ 340:
+/***/ 332:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CardsPageModule", function() { return CardsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderboardPageModule", function() { return LeaderboardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__cards__ = __webpack_require__(353);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(351);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,36 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var CardsPageModule = /** @class */ (function () {
-    function CardsPageModule() {
+var LeaderboardPageModule = /** @class */ (function () {
+    function LeaderboardPageModule() {
     }
-    CardsPageModule = __decorate([
+    LeaderboardPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__cards__["a" /* CardsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* LeaderboardPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__cards__["a" /* CardsPage */]),
-                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* LeaderboardPage */]),
             ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_3__cards__["a" /* CardsPage */]
-            ]
         })
-    ], CardsPageModule);
-    return CardsPageModule;
+    ], LeaderboardPageModule);
+    return LeaderboardPageModule;
 }());
 
-//# sourceMappingURL=cards.module.js.map
+//# sourceMappingURL=leaderboard.module.js.map
 
 /***/ }),
 
-/***/ 353:
+/***/ 351:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CardsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeaderboardPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -62,49 +56,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var CardsPage = /** @class */ (function () {
-    function CardsPage(navCtrl) {
+/**
+ * Generated class for the LeaderboardPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LeaderboardPage = /** @class */ (function () {
+    function LeaderboardPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.cardItems = [
-            {
-                user: {
-                    avatar: 'assets/img/marty-avatar.png',
-                    name: 'Marty McFly'
-                },
-                date: 'November 5, 1955',
-                image: 'assets/img/advance-card-bttf.png',
-                content: 'Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.',
-            },
-            {
-                user: {
-                    avatar: 'assets/img/sarah-avatar.png.jpeg',
-                    name: 'Sarah Connor'
-                },
-                date: 'May 12, 1984',
-                image: 'assets/img/advance-card-tmntr.jpg',
-                content: 'I face the unknown future, with a sense of hope. Because if a machine, a Terminator, can learn the value of human life, maybe we can too.'
-            },
-            {
-                user: {
-                    avatar: 'assets/img/ian-avatar.png',
-                    name: 'Dr. Ian Malcolm'
-                },
-                date: 'June 28, 1990',
-                image: 'assets/img/advance-card-jp.jpg',
-                content: 'Your scientists were so preoccupied with whether or not they could, that they didn\'t stop to think if they should.'
-            }
-        ];
+        this.navParams = navParams;
     }
-    CardsPage = __decorate([
+    LeaderboardPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LeaderboardPage');
+    };
+    LeaderboardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cards',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/cards/cards.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'CARDS_TITLE\' | translate }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n\n  <ion-card *ngFor="let item of cardItems">\n\n    <ion-item>\n      <ion-avatar item-start>\n        <img [src]="item.user.avatar">\n      </ion-avatar>\n      <h2>{{item.user.name}}</h2>\n      <p>{{item.date}}</p>\n    </ion-item>\n\n    <img [src]="item.image">\n\n    <ion-card-content>\n      <p>{{item.content}}</p>\n    </ion-card-content>\n\n    <ion-row>\n      <ion-col>\n        <button ion-button color="primary" clear small icon-start>\n            <ion-icon name=\'thumbs-up\'></ion-icon>\n            12 Likes\n          </button>\n      </ion-col>\n      <ion-col>\n        <button ion-button color="primary" clear small icon-start>\n            <ion-icon name=\'text\'></ion-icon>\n            4 Comments\n          </button>\n      </ion-col>\n      <ion-col center text-center>\n        <ion-note>\n          11h ago\n        </ion-note>\n      </ion-col>\n    </ion-row>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/cards/cards.html"*/
+            selector: 'page-leaderboard',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/leaderboard/leaderboard.html"*/'<!--\n  Generated template for the LeaderboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>leaderboard</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/leaderboard/leaderboard.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]])
-    ], CardsPage);
-    return CardsPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], LeaderboardPage);
+    return LeaderboardPage;
 }());
 
-//# sourceMappingURL=cards.js.map
+//# sourceMappingURL=leaderboard.js.map
 
 /***/ })
 

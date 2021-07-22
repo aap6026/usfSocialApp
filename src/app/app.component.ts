@@ -27,11 +27,12 @@ import { Settings } from '../providers';
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
-  rootPage = FirstRunPage;
+  rootPage = 'StartPage';
 
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
+    { title: 'Start', component: 'StartPage' },
     { title: 'Tutorial', component: 'TutorialPage' },
     { title: 'Welcome', component: 'WelcomePage' },
     { title: 'Tabs', component: 'TabsPage' },

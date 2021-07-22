@@ -1,15 +1,15 @@
 webpackJsonp([2],{
 
-/***/ 337:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsPageModule", function() { return TabsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabs__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login__ = __webpack_require__(353);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,39 +20,62 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TabsPageModule = /** @class */ (function () {
-    function TabsPageModule() {
+var LoginPageModule = /** @class */ (function () {
+    function LoginPageModule() {
     }
-    TabsPageModule = __decorate([
+    LoginPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__tabs__["a" /* TabsPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */]),
                 __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_3__tabs__["a" /* TabsPage */]
+                __WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */]
             ]
         })
-    ], TabsPageModule);
-    return TabsPageModule;
+    ], LoginPageModule);
+    return LoginPageModule;
 }());
 
-//# sourceMappingURL=tabs.module.js.map
+//# sourceMappingURL=login.module.js.map
 
 /***/ }),
 
-/***/ 350:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* unused harmony export FirstRunPage */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Tab1Root; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Tab2Root; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Tab3Root; });
+// The page the user lands on after opening the app and without a session
+var FirstRunPage = 'TutorialPage';
+// The main page the user will see as they use the app over a long period of time.
+// Change this if not using tabs
+var MainPage = 'TabsPage';
+// The initial root pages for our tabs (remove if not using tabs)
+var Tab1Root = 'ListMasterPage';
+var Tab2Root = 'SearchPage';
+var Tab3Root = 'SettingsPage';
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 353:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3____ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4____ = __webpack_require__(345);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -66,33 +89,54 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var TabsPage = /** @class */ (function () {
-    function TabsPage(navCtrl, translateService) {
+
+var LoginPage = /** @class */ (function () {
+    function LoginPage(navCtrl, user, toastCtrl, translateService) {
         var _this = this;
         this.navCtrl = navCtrl;
+        this.user = user;
+        this.toastCtrl = toastCtrl;
         this.translateService = translateService;
-        this.tab1Root = __WEBPACK_IMPORTED_MODULE_3____["c" /* Tab1Root */];
-        this.tab2Root = __WEBPACK_IMPORTED_MODULE_3____["d" /* Tab2Root */];
-        this.tab3Root = __WEBPACK_IMPORTED_MODULE_3____["e" /* Tab3Root */];
-        this.tab1Title = " ";
-        this.tab2Title = " ";
-        this.tab3Title = " ";
-        translateService.get(['TAB1_TITLE', 'TAB2_TITLE', 'TAB3_TITLE']).subscribe(function (values) {
-            _this.tab1Title = values['TAB1_TITLE'];
-            _this.tab2Title = values['TAB2_TITLE'];
-            _this.tab3Title = values['TAB3_TITLE'];
+        // The account fields for the login form.
+        // If you're using the username field with or without email, make
+        // sure to add it to the type
+        this.account = {
+            email: 'test@example.com',
+            password: 'test'
+        };
+        this.translateService.get('LOGIN_ERROR').subscribe(function (value) {
+            _this.loginErrorString = value;
         });
     }
-    TabsPage = __decorate([
+    // Attempt to login in through our User service
+    LoginPage.prototype.doLogin = function () {
+        var _this = this;
+        this.user.login(this.account).subscribe(function (resp) {
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4____["a" /* MainPage */]);
+        }, function (err) {
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4____["a" /* MainPage */]);
+            // Unable to log in
+            var toast = _this.toastCtrl.create({
+                message: _this.loginErrorString,
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
+        });
+    };
+    LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" [tabTitle]="tab1Title" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" [tabTitle]="tab2Title" tabIcon="search"></ion-tab>\n  <ion-tab [root]="tab3Root" [tabTitle]="tab3Title" tabIcon="cog"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/tabs/tabs.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/login/login.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'LOGIN_TITLE\' | translate }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <form (submit)="doLogin()">\n    <ion-list>\n\n      <ion-item>\n        <ion-label fixed>{{ \'EMAIL\' | translate }}</ion-label>\n        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>\n      </ion-item>\n\n      <!--\n      Want to use a Username instead of an Email? Here you go:\n\n      <ion-item>\n        <ion-label floating>{{ \'USERNAME\' | translate }}</ion-label>\n        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>\n      </ion-item>\n      -->\n\n      <ion-item>\n        <ion-label fixed>{{ \'PASSWORD\' | translate }}</ion-label>\n        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>\n      </ion-item>\n\n      <div padding>\n        <button ion-button color="primary" block>{{ \'LOGIN_BUTTON\' | translate }}</button>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>\n'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/login/login.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["c" /* TranslateService */]])
-    ], TabsPage);
-    return TabsPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["d" /* User */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["c" /* TranslateService */]])
+    ], LoginPage);
+    return LoginPage;
 }());
 
-//# sourceMappingURL=tabs.js.map
+//# sourceMappingURL=login.js.map
 
 /***/ })
 

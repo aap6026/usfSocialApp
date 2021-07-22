@@ -5,11 +5,11 @@ webpackJsonp([1],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TutorialPageModule", function() { return TutorialPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignupPageModule", function() { return SignupPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tutorial__ = __webpack_require__(351);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__signup__ = __webpack_require__(357);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,38 +20,62 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TutorialPageModule = /** @class */ (function () {
-    function TutorialPageModule() {
+var SignupPageModule = /** @class */ (function () {
+    function SignupPageModule() {
     }
-    TutorialPageModule = __decorate([
+    SignupPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__tutorial__["a" /* TutorialPage */],
+                __WEBPACK_IMPORTED_MODULE_3__signup__["a" /* SignupPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tutorial__["a" /* TutorialPage */]),
-                __WEBPACK_IMPORTED_MODULE_3__ngx_translate_core__["b" /* TranslateModule */].forChild()
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__signup__["a" /* SignupPage */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_2__tutorial__["a" /* TutorialPage */]
+                __WEBPACK_IMPORTED_MODULE_3__signup__["a" /* SignupPage */]
             ]
         })
-    ], TutorialPageModule);
-    return TutorialPageModule;
+    ], SignupPageModule);
+    return SignupPageModule;
 }());
 
-//# sourceMappingURL=tutorial.module.js.map
+//# sourceMappingURL=signup.module.js.map
 
 /***/ }),
 
-/***/ 351:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TutorialPage; });
+/* unused harmony export FirstRunPage */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return Tab1Root; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return Tab2Root; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return Tab3Root; });
+// The page the user lands on after opening the app and without a session
+var FirstRunPage = 'TutorialPage';
+// The main page the user will see as they use the app over a long period of time.
+// Change this if not using tabs
+var MainPage = 'TabsPage';
+// The initial root pages for our tabs (remove if not using tabs)
+var Tab1Root = 'ListMasterPage';
+var Tab2Root = 'SearchPage';
+var Tab3Root = 'SettingsPage';
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 357:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4____ = __webpack_require__(345);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,69 +88,56 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var TutorialPage = /** @class */ (function () {
-    function TutorialPage(navCtrl, menu, translate, platform) {
+
+
+var SignupPage = /** @class */ (function () {
+    function SignupPage(navCtrl, user, toastCtrl, translateService) {
         var _this = this;
         this.navCtrl = navCtrl;
-        this.menu = menu;
-        this.platform = platform;
-        this.showSkip = true;
-        this.dir = 'ltr';
-        this.dir = platform.dir();
-        translate.get(["TUTORIAL_SLIDE1_TITLE",
-            "TUTORIAL_SLIDE1_DESCRIPTION",
-            "TUTORIAL_SLIDE2_TITLE",
-            "TUTORIAL_SLIDE2_DESCRIPTION",
-            "TUTORIAL_SLIDE3_TITLE",
-            "TUTORIAL_SLIDE3_DESCRIPTION",
-        ]).subscribe(function (values) {
-            console.log('Loaded values', values);
-            _this.slides = [
-                {
-                    title: values.TUTORIAL_SLIDE1_TITLE,
-                    description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-                    image: 'assets/img/ica-slidebox-img-1.png',
-                },
-                {
-                    title: values.TUTORIAL_SLIDE2_TITLE,
-                    description: values.TUTORIAL_SLIDE2_DESCRIPTION,
-                    image: 'assets/img/ica-slidebox-img-2.png',
-                },
-                {
-                    title: values.TUTORIAL_SLIDE3_TITLE,
-                    description: values.TUTORIAL_SLIDE3_DESCRIPTION,
-                    image: 'assets/img/ica-slidebox-img-3.png',
-                }
-            ];
+        this.user = user;
+        this.toastCtrl = toastCtrl;
+        this.translateService = translateService;
+        // The account fields for the login form.
+        // If you're using the username field with or without email, make
+        // sure to add it to the type
+        this.account = {
+            name: 'Test Human',
+            email: 'test@example.com',
+            password: 'test'
+        };
+        this.translateService.get('SIGNUP_ERROR').subscribe(function (value) {
+            _this.signupErrorString = value;
         });
     }
-    TutorialPage.prototype.startApp = function () {
-        this.navCtrl.setRoot('WelcomePage', {}, {
-            animate: true,
-            direction: 'forward'
+    SignupPage.prototype.doSignup = function () {
+        var _this = this;
+        // Attempt to login in through our User service
+        this.user.signup(this.account).subscribe(function (resp) {
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4____["a" /* MainPage */]);
+        }, function (err) {
+            _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4____["a" /* MainPage */]);
+            // Unable to sign up
+            var toast = _this.toastCtrl.create({
+                message: _this.signupErrorString,
+                duration: 3000,
+                position: 'top'
+            });
+            toast.present();
         });
     };
-    TutorialPage.prototype.onSlideChangeStart = function (slider) {
-        this.showSkip = !slider.isEnd();
-    };
-    TutorialPage.prototype.ionViewDidEnter = function () {
-        // the root left menu should be disabled on the tutorial page
-        this.menu.enable(false);
-    };
-    TutorialPage.prototype.ionViewWillLeave = function () {
-        // enable the root left menu when leaving the tutorial page
-        this.menu.enable(true);
-    };
-    TutorialPage = __decorate([
+    SignupPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tutorial',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/tutorial/tutorial.html"*/'<ion-header no-shadow>\n  <ion-navbar>\n    <ion-buttons end *ngIf="showSkip">\n      <button ion-button (click)="startApp()" color="primary">{{ \'TUTORIAL_SKIP_BUTTON\' | translate}}</button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content no-bounce>\n  <ion-slides pager="true" dir="{{dir}}" (ionSlideWillChange)="onSlideChangeStart($event)">\n    <ion-slide *ngFor="let slide of slides">\n      <img [src]="slide.image" class="slide-image" />\n      <h2 class="slide-title" [innerHTML]="slide.title"></h2>\n      <p [innerHTML]="slide.description"></p>\n    </ion-slide>\n    <ion-slide>\n      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image" />\n      <h2 class="slide-title">{{ \'TUTORIAL_SLIDE4_TITLE\' | translate }}</h2>\n      <button ion-button icon-end large clear (click)="startApp()">\n        {{ \'TUTORIAL_CONTINUE_BUTTON\' | translate }}\n        <ion-icon name="arrow-forward"></ion-icon>\n      </button>\n    </ion-slide>\n  </ion-slides>\n  <br /><br /><br /><br />\nTEST <a href="http://localhost:8100/#/welcome">LINK to WELCOME </a>  TEST \n</ion-content>\n'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/tutorial/tutorial.html"*/
+            selector: 'page-signup',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/signup/signup.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'SIGNUP_TITLE\' | translate }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <form (submit)="doSignup()">\n    <ion-list>\n\n      <ion-item>\n        <ion-label fixed>{{ \'NAME\' | translate }}</ion-label>\n        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label fixed>{{ \'EMAIL\' | translate }}</ion-label>\n        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>\n      </ion-item>\n\n      <!--\n      Want to add a Username? Here you go:\n\n      <ion-item>\n        <ion-label floating>Username</ion-label>\n        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>\n      </ion-item>\n      -->\n\n      <ion-item>\n        <ion-label fixed>{{ \'PASSWORD\' | translate }}</ion-label>\n        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>\n      </ion-item>\n\n      <div padding>\n        <button ion-button color="primary" block>{{ \'SIGNUP_BUTTON\' | translate }}</button>\n      </div>\n\n    </ion-list>\n  </form>\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/signup/signup.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* MenuController */], __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateService */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */]])
-    ], TutorialPage);
-    return TutorialPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers__["d" /* User */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["c" /* TranslateService */]])
+    ], SignupPage);
+    return SignupPage;
 }());
 
-//# sourceMappingURL=tutorial.js.map
+//# sourceMappingURL=signup.js.map
 
 /***/ })
 

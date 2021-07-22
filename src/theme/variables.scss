@@ -12,8 +12,11 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
-$text-color:        #000;
+$text-color:        #2f2f2f;
 $background-color:  #fff;
+$usfgreen:  #56821F;
+$usflightgreen: #86AB5E;
+$usfgray: #aaaaaa;
 
 
 // Named Color Variables
@@ -77,3 +80,21 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+.frontpageinput { width: 100%; border: none; color: white; padding: 20px 0; font-size: 20px; background-color: $usfgreen; 
+  border-bottom: 1px solid #6f9440;}
+.frontpageinput::placeholder {color: white;}
+.buttonLarge {text-decoration: none; padding: 15px 0; margin: 40px 0 120px 0;
+  width: 100%; display: block; text-align: center; font-size: 20px; font-weight: bold;
+  background-color: #fff; border-radius: 30px; color: $usfgreen; }
+
+.greenatag { display: block; color: $usflightgreen; font-size: 14px; text-decoration: none; padding-top: 5px;}
+.greenatag ion-icon {margin-right:5px;}
+
+p.gray12 {color: $usfgray; padding: 0; margin: 0; font-size: 14px; margin-top: 10px;}
+p.gray14 {color: $usfgray; padding: 0; margin: 0; font-size: 14px; margin-top: 0px;}
+p.black14 {padding: 0; margin: 0; font-size: 16px; font-weight: bold;}
+a.more { padding: 0; margin: 5px 0 0 0; text-decoration: none; float: right; color: $usflightgreen; text-align: right; }
+
+.greenLink {color: $usflightgreen; text-decoration: none; display: inline-block;}
+.graycolor {color: $usfgray; display: inline-block; margin: 0 10px;}
