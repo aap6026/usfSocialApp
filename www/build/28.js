@@ -1,6 +1,6 @@
-webpackJsonp([3],{
+webpackJsonp([28],{
 
-/***/ 350:
+/***/ 374:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -84,4 +84,4 @@ var WineventsPage = /** @class */ (function () {
 /***/ })
 
 });
-//# sourceMappingURL=3.js.map
+//# sourceMappingURL=28.js.map
