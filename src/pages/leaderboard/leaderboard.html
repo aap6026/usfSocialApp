@@ -4,76 +4,208 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-  <ion-navbar>
-    <ion-title>Games Leaderboard</ion-title>
-  </ion-navbar>
+<ion-header class="ion-no-border" style="padding: 20px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">
+  
+  <a href="http://localhost:8100/#/dashboard">
+    <img src="assets/img/back.png" style="width: 20px; " />
+  </a>
+  <ion-title style="text-align: center;">Leaderboard</ion-title>
+  <a href="http://localhost:8100/#/dashboard" >
+    <img src="assets/img/home.png" style="width: 20px;" />
+  </a>
+
 </ion-header>
 
-<ion-content padding>
+<ion-content style="background-color: #ffffff;">
   
-  <div style="margin:40px 40px 0 40px;">
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">1.  App Dev</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2300</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">2.  Finance</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2280</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">3.  Legal</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2010</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">4.  Marketing</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1943</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">5.  Sales</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1309</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">1.  App Dev</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2300</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">2.  Finance</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2280</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">3.  Legal</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2010</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">4.  Marketing</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1943</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">5.  Sales</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1309</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">1.  App Dev</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2300</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">2.  Finance</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2280</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">3.  Legal</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2010</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">4.  Marketing</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1943</div>
-    </div>
-    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">
-      <div style="display: inline-block; font-weight: regular;">5.  Sales</div>
-      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1309</div>
-    </div>
-  </div>
+  <div style="margin: 40px; padding-bottom: 40px;">
 
+    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">
+      <div style="display: inline-block; font-weight: bold;">1.  App Dev</div>
+      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2300</div>
+      
+      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px; clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">
+        
+        <div style="display: inline-block; font-size: 12px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+        <img src="assets/img/icon4.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+        Ille S.<br/>
+        <span style="font-size: 10px; color: #86AB5E;">120</span>
+        </div>
 
+        <div style="display: inline-block; font-size: 12px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+          <img src="assets/img/icon9.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+          Jacob N.<br/>
+          <span style="font-size: 10px; color: #86AB5E;">118</span>
+          </div>
+  
+
+          <div style="display: inline-block; font-size: 12px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+            <img src="assets/img/icon2.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+            Christian K.<br/>
+            <span style="font-size: 10px; color: #86AB5E;">115</span>
+            </div>
+          
+            <div style="display: inline-block; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+              <a href="http://localhost:8100/#/playersbydepartment">
+              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+              </a>
+            </div>
+    
+
+      </div>
+      
+    </div> <!-- End of App Dev 1 -->
+
+    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">
+      <div style="display: inline-block; font-weight: bold;">2.  Finance</div>
+      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2280</div>
+      
+      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px; clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">
+        
+        <div style="display: inline-block; font-size: 13px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+        <img src="assets/img/icon1.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+        Chris S.<br/>
+        <span style="font-size: 10px; color: #86AB5E;">113</span>
+        </div>
+
+        <div style="display: inline-block; font-size: 13px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+          <img src="assets/img/icon8.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+          Mary N.<br/>
+          <span style="font-size: 10px; color: #86AB5E;">110</span>
+          </div>
+  
+
+          <div style="display: inline-block; font-size: 13px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+            <img src="assets/img/icon3.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+            Larry K.<br/>
+            <span style="font-size: 10px; color: #86AB5E;">97</span>
+            </div>
+          
+            <div style="display: inline-block; font-size: 13px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+              <a href="http://localhost:8100/#/playersbydepartment">
+              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+              </a>
+            </div>
+    
+
+      </div>
+      
+    </div> <!-- End of App Dev 1 -->
+
+    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">
+      <div style="display: inline-block; font-weight: bold;">3.  Legal</div>
+      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2150</div>
+      
+      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px; clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">
+        
+        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+        <img src="assets/img/icon2.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+        Jack P.<br/>
+        <span style="font-size: 10px; color: #86AB5E;">189</span>
+        </div>
+
+        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+          <img src="assets/img/icon5.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+          Rick S.<br/>
+          <span style="font-size: 10px;color: #86AB5E;">111</span>
+          </div>
+  
+
+          <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+            <img src="assets/img/icon6.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+            Peeter L.<br/>
+            <span style="font-size: 10px;color: #86AB5E;">110</span>
+            </div>
+          
+            <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+              <a href="http://localhost:8100/#/playersbydepartment">
+              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+              </a>
+            </div>
+    
+
+      </div>
+      
+    </div> <!-- End of App Dev 1 -->
+
+    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">
+      <div style="display: inline-block; font-weight: bold;">4.  Marketing</div>
+      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2001</div>
+      
+      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px; clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">
+        
+        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+        <img src="assets/img/icon7.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+        Sue A.<br/>
+        <span style="font-size: 10px;color: #86AB5E;">110</span>
+        </div>
+
+        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+          <img src="assets/img/icon3.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+          Andy S.<br/>
+          <span style="font-size: 10px;color: #86AB5E;">88</span>
+          </div>
+  
+
+          <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+            <img src="assets/img/icon1.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+            Oliver I.<br/>
+            <span style="font-size: 10px;color: #86AB5E;">81</span>
+            </div>
+          
+            <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+              <a href="http://localhost:8100/#/playersbydepartment">
+              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+              </a>
+            </div>
+    
+
+      </div>
+      
+    </div> <!-- End of App Dev 1 -->
+
+    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">
+      <div style="display: inline-block; font-weight: bold;">5.  Sales</div>
+      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1100</div>
+      
+      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px;  clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">
+        
+        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+        <img src="assets/img/icon9.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+        Dan P.<br/>
+        <span style="font-size: 10px;color: #86AB5E;">98</span>
+        </div>
+
+        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+          <img src="assets/img/icon5.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+          George S.<br/>
+          <span style="font-size: 10px;color: #86AB5E;">90</span>
+          </div>
+  
+
+          <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+            <img src="assets/img/icon2.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+            Don S.<br/>
+            <span style="font-size: 10px;color: #86AB5E;">76</span>
+            </div>
+          
+            <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> 
+              <a href="http://localhost:8100/#/playersbydepartment">
+              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>
+              </a>
+            </div>
+    
+
+      </div>
+      
+    </div> <!-- End of App Dev 1 -->
+<br />
+<br />
+
+  </div> <!-- page margin -->
+
+  <br />
+  <br />
+  <br />
+  <br />
 </ion-content>

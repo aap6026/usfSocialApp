@@ -3855,12 +3855,36 @@ ion-icon::before {
   color: #56821F;
 }
 
+.buttonLarge2 {
+  text-decoration: none;
+  padding: 10px 0;
+  margin: 40px auto 120px auto;
+  border: 2px solid #86AB5E;
+  width: 80%;
+  display: block;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 30px;
+  color: #86AB5E;
+}
+
 .greenatag {
   display: block;
   color: #86AB5E;
   font-size: 14px;
   text-decoration: none;
   padding-top: 5px;
+}
+
+.greenatag2 {
+  display: block;
+  color: #86AB5E;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  padding-top: 10px;
 }
 
 .greenatag ion-icon {
@@ -3909,6 +3933,17 @@ a.more {
   color: #aaaaaa;
   display: inline-block;
   margin: 0 10px;
+}
+
+ion-header {
+  background-color: white;
+}
+
+ion-navbar {
+  background-color: white;
+  --background-color: white;
+  background: #ffffff;
+  --background: #ffffff;
 }
 
 ion-action-sheet {
@@ -25790,6 +25825,17 @@ ion-navbar.toolbar {
 .wp .tabs:not(.tabs-ios[tabsPlacement='top']) ion-footer .toolbar:last-child {
   padding-bottom: 4px;
   min-height: 46px;
+}
+
+ion-header {
+  background-color: white;
+}
+
+ion-navbar {
+  background-color: white;
+  --background-color: white;
+  background: #ffffff;
+  --background: #ffffff;
 }
 
 page-item-create .profile-image-wrapper {
