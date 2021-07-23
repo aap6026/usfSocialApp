@@ -1,7 +1,7 @@
 {
   "name": "usfSocialApp",
   "version": "0.0.1",
-  "author": "Ionic Framework",
+  "author": "Ctrl Alt Elite",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -42,5 +42,5 @@
     "@ionic/app-scripts": "3.2.4",
     "typescript": "2.6.2"
   },
-  "description": "An Ionic project"
+  "description": "Ctrl Alt Elite"
 }
