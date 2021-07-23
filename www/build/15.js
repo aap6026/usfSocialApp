@@ -5,10 +5,11 @@ webpackJsonp([15],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeaderboardPageModule", function() { return LeaderboardPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListMasterPageModule", function() { return ListMasterPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__leaderboard__ = __webpack_require__(359);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_master__ = __webpack_require__(360);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +19,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LeaderboardPageModule = /** @class */ (function () {
-    function LeaderboardPageModule() {
+
+var ListMasterPageModule = /** @class */ (function () {
+    function ListMasterPageModule() {
     }
-    LeaderboardPageModule = __decorate([
+    ListMasterPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* LeaderboardPage */],
+                __WEBPACK_IMPORTED_MODULE_3__list_master__["a" /* ListMasterPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__leaderboard__["a" /* LeaderboardPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__list_master__["a" /* ListMasterPage */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
             ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_3__list_master__["a" /* ListMasterPage */]
+            ]
         })
-    ], LeaderboardPageModule);
-    return LeaderboardPageModule;
+    ], ListMasterPageModule);
+    return ListMasterPageModule;
 }());
 
-//# sourceMappingURL=leaderboard.module.js.map
+//# sourceMappingURL=list-master.module.js.map
 
 /***/ }),
 
-/***/ 359:
+/***/ 360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeaderboardPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListMasterPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,30 +63,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the LeaderboardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var LeaderboardPage = /** @class */ (function () {
-    function LeaderboardPage(navCtrl, navParams) {
+
+var ListMasterPage = /** @class */ (function () {
+    function ListMasterPage(navCtrl, items, modalCtrl) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
+        this.items = items;
+        this.modalCtrl = modalCtrl;
+        this.currentItems = this.items.query();
     }
-    LeaderboardPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LeaderboardPage');
+    /**
+     * The view loaded, let's query our items for the list
+     */
+    ListMasterPage.prototype.ionViewDidLoad = function () {
     };
-    LeaderboardPage = __decorate([
+    /**
+     * Prompt the user to add a new item. This shows our ItemCreatePage in a
+     * modal and then adds the new item to our data source if the user created one.
+     */
+    ListMasterPage.prototype.addItem = function () {
+        var _this = this;
+        var addModal = this.modalCtrl.create('ItemCreatePage');
+        addModal.onDidDismiss(function (item) {
+            if (item) {
+                _this.items.add(item);
+            }
+        });
+        addModal.present();
+    };
+    /**
+     * Delete an item from the list of items.
+     */
+    ListMasterPage.prototype.deleteItem = function (item) {
+        this.items.delete(item);
+    };
+    /**
+     * Navigate to the detail page for this item.
+     */
+    ListMasterPage.prototype.openItem = function (item) {
+        this.navCtrl.push('ItemDetailPage', {
+            item: item
+        });
+    };
+    ListMasterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-leaderboard',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/leaderboard/leaderboard.html"*/'<!--\n  Generated template for the LeaderboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="ion-no-border" style="padding: 20px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">\n  \n  <a href="http://localhost:8100/#/dashboard">\n    <img src="assets/img/back.png" style="width: 20px; " />\n  </a>\n  <ion-title style="text-align: center;">Leaderboard</ion-title>\n  <a href="http://localhost:8100/#/dashboard" >\n    <img src="assets/img/home.png" style="width: 20px;" />\n  </a>\n\n</ion-header>\n\n<ion-content style="background-color: #ffffff;">\n  \n  <div style="margin: 40px; padding-bottom: 40px;">\n\n    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">\n      <div style="display: inline-block; font-weight: bold;">1.  App Dev</div>\n      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2300</div>\n      \n      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px; clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">\n        \n        <div style="display: inline-block; font-size: 12px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n        <img src="assets/img/icon4.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n        Ille S.<br/>\n        <span style="font-size: 10px; color: #86AB5E;">120</span>\n        </div>\n\n        <div style="display: inline-block; font-size: 12px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n          <img src="assets/img/icon9.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n          Jacob N.<br/>\n          <span style="font-size: 10px; color: #86AB5E;">118</span>\n          </div>\n  \n\n          <div style="display: inline-block; font-size: 12px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n            <img src="assets/img/icon2.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n            Christian K.<br/>\n            <span style="font-size: 10px; color: #86AB5E;">115</span>\n            </div>\n          \n            <div style="display: inline-block; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n              <a href="http://localhost:8100/#/playersbydepartment">\n              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n              </a>\n            </div>\n    \n\n      </div>\n      \n    </div> <!-- End of App Dev 1 -->\n\n    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">\n      <div style="display: inline-block; font-weight: bold;">2.  Finance</div>\n      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2280</div>\n      \n      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px; clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">\n        \n        <div style="display: inline-block; font-size: 13px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n        <img src="assets/img/icon1.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n        Chris S.<br/>\n        <span style="font-size: 10px; color: #86AB5E;">113</span>\n        </div>\n\n        <div style="display: inline-block; font-size: 13px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n          <img src="assets/img/icon8.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n          Mary N.<br/>\n          <span style="font-size: 10px; color: #86AB5E;">110</span>\n          </div>\n  \n\n          <div style="display: inline-block; font-size: 13px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n            <img src="assets/img/icon3.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n            Larry K.<br/>\n            <span style="font-size: 10px; color: #86AB5E;">97</span>\n            </div>\n          \n            <div style="display: inline-block; font-size: 13px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n              <a href="http://localhost:8100/#/playersbydepartment">\n              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n              </a>\n            </div>\n    \n\n      </div>\n      \n    </div> <!-- End of App Dev 1 -->\n\n    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">\n      <div style="display: inline-block; font-weight: bold;">3.  Legal</div>\n      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2150</div>\n      \n      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px; clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">\n        \n        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n        <img src="assets/img/icon2.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n        Jack P.<br/>\n        <span style="font-size: 10px; color: #86AB5E;">189</span>\n        </div>\n\n        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n          <img src="assets/img/icon5.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n          Rick S.<br/>\n          <span style="font-size: 10px;color: #86AB5E;">111</span>\n          </div>\n  \n\n          <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n            <img src="assets/img/icon6.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n            Peeter L.<br/>\n            <span style="font-size: 10px;color: #86AB5E;">110</span>\n            </div>\n          \n            <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n              <a href="http://localhost:8100/#/playersbydepartment">\n              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n              </a>\n            </div>\n    \n\n      </div>\n      \n    </div> <!-- End of App Dev 1 -->\n\n    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">\n      <div style="display: inline-block; font-weight: bold;">4.  Marketing</div>\n      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2001</div>\n      \n      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px; clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">\n        \n        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n        <img src="assets/img/icon7.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n        Sue A.<br/>\n        <span style="font-size: 10px;color: #86AB5E;">110</span>\n        </div>\n\n        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n          <img src="assets/img/icon3.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n          Andy S.<br/>\n          <span style="font-size: 10px;color: #86AB5E;">88</span>\n          </div>\n  \n\n          <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n            <img src="assets/img/icon1.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n            Oliver I.<br/>\n            <span style="font-size: 10px;color: #86AB5E;">81</span>\n            </div>\n          \n            <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n              <a href="http://localhost:8100/#/playersbydepartment">\n              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n              </a>\n            </div>\n    \n\n      </div>\n      \n    </div> <!-- End of App Dev 1 -->\n\n    <div style="font-size: 14px; display: flex;  display:block; margin: 15px 0;">\n      <div style="display: inline-block; font-weight: bold;">5.  Sales</div>\n      <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1100</div>\n      \n      <div style="width: 100%; display: inline-flex; float: left; border-bottom: 1px solid #d8d8d8; padding-bottom: 20px;  clear: both; overflow-x:scroll; overflow-y:hidden; white-space:nowrap; margin-bottom: 20px;">\n        \n        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n        <img src="assets/img/icon9.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n        Dan P.<br/>\n        <span style="font-size: 10px;color: #86AB5E;">98</span>\n        </div>\n\n        <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n          <img src="assets/img/icon5.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n          George S.<br/>\n          <span style="font-size: 10px;color: #86AB5E;">90</span>\n          </div>\n  \n\n          <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n            <img src="assets/img/icon2.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n            Don S.<br/>\n            <span style="font-size: 10px;color: #86AB5E;">76</span>\n            </div>\n          \n            <div style="display: inline-block; font-size: 14px; width: 75px; text-align: center; height: 120px; padding: 20px 0;"> \n              <a href="http://localhost:8100/#/playersbydepartment">\n              <img src="assets/img/icon11.png" style="width: 60px; padding-bottom: 5px;" /><br/>\n              </a>\n            </div>\n    \n\n      </div>\n      \n    </div> <!-- End of App Dev 1 -->\n<br />\n<br />\n\n  </div> <!-- page margin -->\n\n  <br />\n  <br />\n  <br />\n  <br />\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/leaderboard/leaderboard.html"*/,
+            selector: 'page-list-master',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/list-master/list-master.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'LIST_MASTER_TITLE\' | translate }}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addItem()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of currentItems">\n      <button ion-item (click)="openItem(item)">\n        <ion-avatar item-start>\n          <img [src]="item.profilePic" />\n        </ion-avatar>\n        <h2>{{item.name}}</h2>\n        <p>{{item.about}}</p>\n        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>\n      </button>\n\n      <ion-item-options>\n        <button ion-button color="danger" (click)="deleteItem(item)">\n          {{ \'DELETE_BUTTON\' | translate }}\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/list-master/list-master.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], LeaderboardPage);
-    return LeaderboardPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
+    ], ListMasterPage);
+    return ListMasterPage;
 }());
 
-//# sourceMappingURL=leaderboard.js.map
+//# sourceMappingURL=list-master.js.map
 
 /***/ })
 

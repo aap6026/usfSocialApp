@@ -5,11 +5,10 @@ webpackJsonp([9],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SettingsPageModule", function() { return SettingsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ShopPageModule", function() { return ShopPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__settings__ = __webpack_require__(366);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shop__ = __webpack_require__(367);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,41 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var SettingsPageModule = /** @class */ (function () {
-    function SettingsPageModule() {
+var ShopPageModule = /** @class */ (function () {
+    function ShopPageModule() {
     }
-    SettingsPageModule = __decorate([
+    ShopPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__settings__["a" /* SettingsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__shop__["a" /* ShopPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__settings__["a" /* SettingsPage */]),
-                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__shop__["a" /* ShopPage */]),
             ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_3__settings__["a" /* SettingsPage */]
-            ]
         })
-    ], SettingsPageModule);
-    return SettingsPageModule;
+    ], ShopPageModule);
+    return ShopPageModule;
 }());
 
-//# sourceMappingURL=settings.module.js.map
+//# sourceMappingURL=shop.module.js.map
 
 /***/ }),
 
-/***/ 366:
+/***/ 367:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ShopPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,90 +56,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
 /**
- * The Settings page is a simple form that syncs with a Settings provider
- * to enable the user to customize settings for the app.
+ * Generated class for the ShopPage page.
  *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
  */
-var SettingsPage = /** @class */ (function () {
-    function SettingsPage(navCtrl, settings, formBuilder, navParams, translate) {
+var ShopPage = /** @class */ (function () {
+    function ShopPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.settings = settings;
-        this.formBuilder = formBuilder;
         this.navParams = navParams;
-        this.translate = translate;
-        this.settingsReady = false;
-        this.profileSettings = {
-            page: 'profile',
-            pageTitleKey: 'SETTINGS_PAGE_PROFILE'
-        };
-        this.page = 'main';
-        this.pageTitleKey = 'SETTINGS_TITLE';
-        this.subSettings = SettingsPage_1;
     }
-    SettingsPage_1 = SettingsPage;
-    SettingsPage.prototype._buildForm = function () {
-        var _this = this;
-        var group = {
-            option1: [this.options.option1],
-            option2: [this.options.option2],
-            option3: [this.options.option3]
-        };
-        switch (this.page) {
-            case 'main':
-                break;
-            case 'profile':
-                group = {
-                    option4: [this.options.option4]
-                };
-                break;
-        }
-        this.form = this.formBuilder.group(group);
-        // Watch the form for changes, and
-        this.form.valueChanges.subscribe(function (v) {
-            _this.settings.merge(_this.form.value);
-        });
+    ShopPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ShopPage');
     };
-    SettingsPage.prototype.ionViewDidLoad = function () {
-        // Build an empty form for the template to render
-        this.form = this.formBuilder.group({});
-    };
-    SettingsPage.prototype.ionViewWillEnter = function () {
-        var _this = this;
-        // Build an empty form for the template to render
-        this.form = this.formBuilder.group({});
-        this.page = this.navParams.get('page') || this.page;
-        this.pageTitleKey = this.navParams.get('pageTitleKey') || this.pageTitleKey;
-        this.translate.get(this.pageTitleKey).subscribe(function (res) {
-            _this.pageTitle = res;
-        });
-        this.settings.load().then(function () {
-            _this.settingsReady = true;
-            _this.options = _this.settings.allSettings;
-            _this._buildForm();
-        });
-    };
-    SettingsPage.prototype.ngOnChanges = function () {
-        console.log('Ng All Changes');
-    };
-    SettingsPage = SettingsPage_1 = __decorate([
+    ShopPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-settings',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/settings/settings.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ pageTitle }}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <form [formGroup]="form" *ngIf="settingsReady">\n    <ion-list *ngIf="page == \'main\'">\n      <ion-item>\n        <ion-label>{{ \'SETTINGS_OPTION1\' | translate }}</ion-label>\n        <ion-toggle formControlName="option1"></ion-toggle>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>{{ \'SETTINGS_OPTION2\' | translate }}</ion-label>\n        <ion-input formControlName="option2"></ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>{{ \'SETTINGS_OPTION3\' | translate }}</ion-label>\n        <ion-select formControlName="option3">\n          <ion-option value="1" checked="true">1</ion-option>\n          <ion-option value="2">2</ion-option>\n          <ion-option value="3">3</ion-option>\n        </ion-select>\n      </ion-item>\n\n      <button ion-item [navPush]="subSettings" [navParams]="profileSettings">\n        {{ \'SETTINGS_PROFILE_BUTTON\' | translate }}\n      </button>\n    </ion-list>\n\n    <ion-list *ngIf="page == \'profile\'">\n      <ion-item>\n        <ion-label>{{ \'SETTINGS_OPTION4\' | translate }}</ion-label>\n        <ion-input formControlName="option4"></ion-input>\n      </ion-item>\n    </ion-list>\n  </form>\n\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/settings/settings.html"*/
+            selector: 'page-shop',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/shop/shop.html"*/'<!--\n  Generated template for the ShopPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="ion-no-border" style="padding: 20px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">\n  \n  <a href="http://localhost:8100/#/dashboard">\n    <img src="assets/img/back.png" style="width: 20px; " />\n  </a>\n  <ion-title style="text-align: center;">Shop</ion-title>\n  <a href="http://localhost:8100/#/dashboard" >\n    <img src="assets/img/home.png" style="width: 20px;" />\n  </a>\n\n</ion-header>\n\n<ion-content style="background-color: #ffffff;">\n\n  <div style="padding: 40px 20px 40px 40px; display: block; width: 100%">\n\n    <div style=" width: 100%; margin-bottom: 30px; display:block; height: 75px;">\n      <img src="assets/img/swag1.png" style="height: 75px; float: left; margin-right: 20px;" />\n      <p class="gray14">Cloting</p>\n      <p class="black14">Orange USF Cap</p>\n      <a href="" class="greenatag2">$36.00</a>\n    </div>\n  \n    <div style=" width: 100%; margin-bottom: 30px; display:block; height: 75px;">\n      <img src="assets/img/swag2.png" style="height: 75px; float: left; margin-right: 20px;" />\n      <p class="gray14">Cloting</p>\n      <p class="black14">White USF T-shirt</p>\n      <a href="" class="greenatag2">$ 18.00</a>\n    </div>\n  \n    <div style=" width: 100%; margin-bottom: 30px; display:block; height: 75px;">\n      <img src="assets/img/swag3.png" style="height: 75px; float: left; margin-right: 20px;" />\n      <p class="gray14">Office Supply</p>\n      <p class="black14">Gray USF Notebook</p>\n      <a href="" class="greenatag2">$18.00</a>\n    </div>\n\n    <div style=" width: 100%; margin-bottom: 30px; display:block; height: 75px;">\n      <img src="assets/img/swag4.png" style="height: 75px; float: left; margin-right: 20px;" />\n      <p class="gray14">Clothing</p>\n      <p class="black14">Gray 1-Piece Scarf</p>\n      <a href="" class="greenatag2">$36.00</a>\n    </div>\n\n    <div style=" width: 100%; margin-bottom: 30px; display:block; height: 75px;">\n      <img src="assets/img/swag5.png" style="height: 75px; float: left; margin-right: 20px;" />\n      <p class="gray14">Bags</p>\n      <p class="black14">USG Backback</p>\n      <a href="" class="greenatag2">$64.00</a>\n    </div>\n\n    <div style=" width: 100%; margin-bottom: 30px; display:block; height: 75px;">\n      <img src="assets/img/swag6.png" style="height: 75px; float: left; margin-right: 20px;" />\n      <p class="gray14">Bags</p>\n      <p class="black14">USF Cooler Bag</p>\n      <a href="" class="greenatag2">$42.00</a>\n    </div>\n\n    <a href="http://localhost:8100/#/shop" class="buttonLarge2">LOAD MORE</a>\n  \n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/shop/shop.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_4__providers__["c" /* Settings */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ngx_translate_core__["c" /* TranslateService */]])
-    ], SettingsPage);
-    return SettingsPage;
-    var SettingsPage_1;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], ShopPage);
+    return ShopPage;
 }());
 
-//# sourceMappingURL=settings.js.map
+//# sourceMappingURL=shop.js.map
 
 /***/ })
 

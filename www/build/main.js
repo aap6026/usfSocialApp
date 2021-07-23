@@ -1,4 +1,4 @@
-webpackJsonp([23],{
+webpackJsonp([24],{
 
 /***/ 118:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -43,94 +43,98 @@ webpackEmptyAsyncContext.id = 130;
 var map = {
 	"../pages/cards/cards.module": [
 		327,
-		22
+		23
 	],
 	"../pages/content/content.module": [
 		328,
-		21
+		22
 	],
 	"../pages/dashboard/dashboard.module": [
+		329,
+		21
+	],
+	"../pages/erg/erg.module": [
 		330,
 		20
 	],
-	"../pages/erg/erg.module": [
-		329,
-		19
-	],
 	"../pages/events/events.module": [
 		331,
-		18
+		19
 	],
 	"../pages/item-create/item-create.module": [
+		332,
+		18
+	],
+	"../pages/item-detail/item-detail.module": [
 		333,
 		17
 	],
-	"../pages/item-detail/item-detail.module": [
-		332,
+	"../pages/leaderboard/leaderboard.module": [
+		334,
 		16
 	],
-	"../pages/leaderboard/leaderboard.module": [
+	"../pages/list-master/list-master.module": [
 		335,
 		15
-	],
-	"../pages/list-master/list-master.module": [
-		334,
-		14
 	],
 	"../pages/login/login.module": [
 		336,
 		2
 	],
 	"../pages/menu/menu.module": [
+		337,
+		14
+	],
+	"../pages/playersbydepartment/playersbydepartment.module": [
 		338,
 		13
 	],
-	"../pages/playersbydepartment/playersbydepartment.module": [
-		339,
+	"../pages/profile/profile.module": [
+		340,
 		12
 	],
-	"../pages/profile/profile.module": [
-		337,
+	"../pages/search/search.module": [
+		339,
 		11
 	],
-	"../pages/search/search.module": [
-		340,
+	"../pages/settings/settings.module": [
+		341,
 		10
 	],
-	"../pages/settings/settings.module": [
+	"../pages/shop/shop.module": [
 		342,
 		9
 	],
-	"../pages/shop/shop.module": [
-		341,
-		8
-	],
 	"../pages/signup/signup.module": [
-		343,
+		344,
 		1
 	],
 	"../pages/start/start.module": [
-		345,
-		7
+		343,
+		8
 	],
 	"../pages/tabs/tabs.module": [
-		344,
+		346,
 		0
 	],
 	"../pages/trivia1/trivia1.module": [
+		345,
+		7
+	],
+	"../pages/tutorial/tutorial.module": [
 		347,
 		6
 	],
-	"../pages/tutorial/tutorial.module": [
-		346,
+	"../pages/welcome/welcome.module": [
+		348,
 		5
 	],
-	"../pages/welcome/welcome.module": [
+	"../pages/win/win.module": [
 		349,
 		4
 	],
-	"../pages/win/win.module": [
-		348,
+	"../pages/winevents/winevents.module": [
+		350,
 		3
 	]
 };
@@ -410,27 +414,28 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/cards/cards.module#CardsPageModule', name: 'CardsPage', segment: 'cards', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/content/content.module#ContentPageModule', name: 'ContentPage', segment: 'content', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/erg/erg.module#ErgPageModule', name: 'ErgPage', segment: 'erg', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/dashboard/dashboard.module#DashboardPageModule', name: 'DashboardPage', segment: 'dashboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/erg/erg.module#ErgPageModule', name: 'ErgPage', segment: 'erg', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/events/events.module#EventsPageModule', name: 'EventsPage', segment: 'events', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/item-create/item-create.module#ItemCreatePageModule', name: 'ItemCreatePage', segment: 'item-create', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/list-master/list-master.module#ListMasterPageModule', name: 'ListMasterPage', segment: 'list-master', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/item-detail/item-detail.module#ItemDetailPageModule', name: 'ItemDetailPage', segment: 'item-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/leaderboard/leaderboard.module#LeaderboardPageModule', name: 'LeaderboardPage', segment: 'leaderboard', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/list-master/list-master.module#ListMasterPageModule', name: 'ListMasterPage', segment: 'list-master', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/playersbydepartment/playersbydepartment.module#PlayersbydepartmentPageModule', name: 'PlayersbydepartmentPage', segment: 'playersbydepartment', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/search/search.module#SearchPageModule', name: 'SearchPage', segment: 'search', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/shop/shop.module#ShopPageModule', name: 'ShopPage', segment: 'shop', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/shop/shop.module#ShopPageModule', name: 'ShopPage', segment: 'shop', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/start/start.module#StartPageModule', name: 'StartPage', segment: 'start', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/tutorial/tutorial.module#TutorialPageModule', name: 'TutorialPage', segment: 'tutorial', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/signup/signup.module#SignupPageModule', name: 'SignupPage', segment: 'signup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/trivia1/trivia1.module#Trivia1PageModule', name: 'Trivia1Page', segment: 'trivia1', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/tutorial/tutorial.module#TutorialPageModule', name: 'TutorialPage', segment: 'tutorial', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/win/win.module#WinPageModule', name: 'WinPage', segment: 'win', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/welcome/welcome.module#WelcomePageModule', name: 'WelcomePage', segment: 'welcome', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/winevents/winevents.module#WineventsPageModule', name: 'WineventsPage', segment: 'winevents', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()
