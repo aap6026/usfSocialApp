@@ -1,11 +1,61 @@
-<ion-menu [content]="content" type="overlay">
-  <ion-content>
-    <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list>
-  </ion-content>
-</ion-menu>
+<ion-header class="ion-no-border" style="padding: 10px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">
+  
+  <a href="http://localhost:8100/#/profile" style="margin-right: 15px; width: 45px;" >
+    <img src="assets/img/icon4.png" />
+  </a>
 
-<ion-nav #content [root]="rootPage"></ion-nav>
+  <div style="margin-top: 9px;">
+  <strong>Ille Sutt</strong> (App Dev)<br />
+  Points: 120
+  </div>
+
+  <div style="margin-left: auto; margin-top: 16px;">
+    <a href="http://localhost:8100/#/dashboard" >
+      <img src="assets/img/close.png" style="width: 20px;" />
+    </a>
+
+  </div>
+  
+
+
+</ion-header>
+
+<ion-content style="background-color: #ffffff;">
+
+  <div style="margin:40px;">
+    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">
+      <a href="http://localhost:8100/#/events">
+        Upcoming Events
+      </a>
+      
+    </div>
+    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">
+      <a href="http://localhost:8100/#/leaderboard">
+        Games Leaderboard
+      </a>
+      
+    </div>
+    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">
+      <a href="http://localhost:8100/#/book">
+        Book Club
+      </a>
+      
+    </div>
+
+    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">
+      <a href="http://localhost:8100/#/erg">
+        US Foods Employee Resource Groups (ERGs)
+      </a>
+    
+    </div>
+    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">
+      <a href="http://localhost:8100/#/shop">
+        Shop US Foods Swag</div>
+      </a>
+    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">
+      <a href="http://localhost:8100/#/start">
+        Logout
+      </a>
+    </div>
+  </div>
+</ion-content>

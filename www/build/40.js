@@ -1,14 +1,15 @@
 webpackJsonp([40],{
 
-/***/ 331:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventsPageModule", function() { return EventsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemCreatePageModule", function() { return ItemCreatePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__events__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__item_create__ = __webpack_require__(381);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +19,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EventsPageModule = /** @class */ (function () {
-    function EventsPageModule() {
+
+var ItemCreatePageModule = /** @class */ (function () {
+    function ItemCreatePageModule() {
     }
-    EventsPageModule = __decorate([
+    ItemCreatePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__events__["a" /* EventsPage */],
+                __WEBPACK_IMPORTED_MODULE_3__item_create__["a" /* ItemCreatePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__events__["a" /* EventsPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__item_create__["a" /* ItemCreatePage */]),
+                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
             ],
+            exports: [
+                __WEBPACK_IMPORTED_MODULE_3__item_create__["a" /* ItemCreatePage */]
+            ]
         })
-    ], EventsPageModule);
-    return EventsPageModule;
+    ], ItemCreatePageModule);
+    return ItemCreatePageModule;
 }());
 
-//# sourceMappingURL=events.module.js.map
+//# sourceMappingURL=item-create.module.js.map
 
 /***/ }),
 
-/***/ 377:
+/***/ 381:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EventsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ItemCreatePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ionic_angular__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,30 +64,85 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the EventsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var EventsPage = /** @class */ (function () {
-    function EventsPage(navCtrl, navParams) {
+
+
+var ItemCreatePage = /** @class */ (function () {
+    function ItemCreatePage(navCtrl, viewCtrl, formBuilder, camera) {
+        var _this = this;
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
+        this.viewCtrl = viewCtrl;
+        this.camera = camera;
+        this.form = formBuilder.group({
+            profilePic: [''],
+            name: ['', __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required],
+            about: ['']
+        });
+        // Watch the form for changes, and
+        this.form.valueChanges.subscribe(function (v) {
+            _this.isReadyToSave = _this.form.valid;
+        });
     }
-    EventsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EventsPage');
+    ItemCreatePage.prototype.ionViewDidLoad = function () {
     };
-    EventsPage = __decorate([
+    ItemCreatePage.prototype.getPicture = function () {
+        var _this = this;
+        if (__WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]['installed']()) {
+            this.camera.getPicture({
+                destinationType: this.camera.DestinationType.DATA_URL,
+                targetWidth: 96,
+                targetHeight: 96
+            }).then(function (data) {
+                _this.form.patchValue({ 'profilePic': 'data:image/jpg;base64,' + data });
+            }, function (err) {
+                alert('Unable to take photo');
+            });
+        }
+        else {
+            this.fileInput.nativeElement.click();
+        }
+    };
+    ItemCreatePage.prototype.processWebImage = function (event) {
+        var _this = this;
+        var reader = new FileReader();
+        reader.onload = function (readerEvent) {
+            var imageData = readerEvent.target.result;
+            _this.form.patchValue({ 'profilePic': imageData });
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
+    ItemCreatePage.prototype.getProfileImageStyle = function () {
+        return 'url(' + this.form.controls['profilePic'].value + ')';
+    };
+    /**
+     * The user cancelled, so we dismiss without sending data back.
+     */
+    ItemCreatePage.prototype.cancel = function () {
+        this.viewCtrl.dismiss();
+    };
+    /**
+     * The user is done and wants to create the item, so return it
+     * back to the presenter.
+     */
+    ItemCreatePage.prototype.done = function () {
+        if (!this.form.valid) {
+            return;
+        }
+        this.viewCtrl.dismiss(this.form.value);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('fileInput'),
+        __metadata("design:type", Object)
+    ], ItemCreatePage.prototype, "fileInput", void 0);
+    ItemCreatePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-events',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/events/events.html"*/'<!--\n  Generated template for the LeaderboardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="ion-no-border" style="padding: 20px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">\n  <a href="http://localhost:8100/#/dashboard">\n    <img src="assets/img/back.png" style="width: 20px; " />\n  </a>\n  <ion-title style="text-align: center;">Upcoming Events</ion-title>\n  <a href="http://localhost:8100/#/dashboard" >\n    <img src="assets/img/home.png" style="width: 20px;" />\n  </a>\n\n</ion-header>\n\n\n<ion-content style="background-color: #ffffff;">\n\n\n<div style="padding: 20px 40px 0 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">July 2021</h2>\n</div>\n\n<div style="padding: 20px 20px 40px 40px; display: block; width: 100%">\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 0px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n</div>\n\n<div style="padding: 0px 40px 0 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">August 2021</h2>\n</div>\n\n<div style="padding: 20px 20px 40px 40px; display: block; width: 100%">\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 0px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n</div>\n\n<div style="padding: 0px 40px 0 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">September 2021</h2>\n</div>\n\n<div style="padding: 20px 20px 40px 40px; display: block; width: 100%">\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <a href="http://localhost:8100/#/events" class="buttonLarge2">LOAD MORE</a>\n</div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/events/events.html"*/,
+            selector: 'page-item-create',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/item-create/item-create.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'ITEM_CREATE_TITLE\' | translate }}</ion-title>\n    <ion-buttons start>\n      <button ion-button (click)="cancel()">\n        <span color="primary" showWhen="ios">\n          {{ \'CANCEL_BUTTON\' | translate }}\n        </span>\n        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n    <ion-buttons end>\n      <button ion-button (click)="done()" [disabled]="!isReadyToSave" strong>\n        <span color="primary" showWhen="ios">\n          {{ \'DONE_BUTTON\' | translate }}\n        </span>\n        <ion-icon name="md-checkmark" showWhen="core,android,windows"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content>\n  <form *ngIf="form" [formGroup]="form" (ngSubmit)="createItem()">\n    <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />\n    <div class="profile-image-wrapper" (click)="getPicture()">\n      <div class="profile-image-placeholder" *ngIf="!this.form.controls.profilePic.value">\n        <ion-icon name="add"></ion-icon>\n        <div>\n          {{ \'ITEM_CREATE_CHOOSE_IMAGE\' | translate }}\n        </div>\n      </div>\n      <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="this.form.controls.profilePic.value"></div>\n    </div>\n    <ion-list>\n      <ion-item>\n        <ion-input type="text" placeholder="{{ \'ITEM_NAME_PLACEHOLDER\' | translate }}" formControlName="name"></ion-input>\n      </ion-item>\n      <ion-item>\n        <ion-input type="text" placeholder="{{ \'ITEM_ABOUT_PLACEHOLDER\' | translate }}" formControlName="about"></ion-input>\n      </ion-item>\n    </ion-list>\n  </form>\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/item-create/item-create.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], EventsPage);
-    return EventsPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["m" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_camera__["a" /* Camera */]])
+    ], ItemCreatePage);
+    return ItemCreatePage;
 }());
 
-//# sourceMappingURL=events.js.map
+//# sourceMappingURL=item-create.js.map
 
 /***/ })
 

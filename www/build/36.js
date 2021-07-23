@@ -1,15 +1,14 @@
 webpackJsonp([36],{
 
-/***/ 335:
+/***/ 338:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListMasterPageModule", function() { return ListMasterPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageModule", function() { return MenuPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_master__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu__ = __webpack_require__(386);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,39 +18,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var ListMasterPageModule = /** @class */ (function () {
-    function ListMasterPageModule() {
+var MenuPageModule = /** @class */ (function () {
+    function MenuPageModule() {
     }
-    ListMasterPageModule = __decorate([
+    MenuPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__list_master__["a" /* ListMasterPage */],
+                __WEBPACK_IMPORTED_MODULE_2__menu__["a" /* MenuPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__list_master__["a" /* ListMasterPage */]),
-                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__menu__["a" /* MenuPage */]),
             ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_3__list_master__["a" /* ListMasterPage */]
-            ]
         })
-    ], ListMasterPageModule);
-    return ListMasterPageModule;
+    ], MenuPageModule);
+    return MenuPageModule;
 }());
 
-//# sourceMappingURL=list-master.module.js.map
+//# sourceMappingURL=menu.module.js.map
 
 /***/ }),
 
-/***/ 381:
+/***/ 386:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListMasterPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers__ = __webpack_require__(118);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -63,57 +56,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var ListMasterPage = /** @class */ (function () {
-    function ListMasterPage(navCtrl, items, modalCtrl) {
+/**
+ * Generated class for the MenuPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MenuPage = /** @class */ (function () {
+    function MenuPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.items = items;
-        this.modalCtrl = modalCtrl;
-        this.currentItems = this.items.query();
+        this.navParams = navParams;
     }
-    /**
-     * The view loaded, let's query our items for the list
-     */
-    ListMasterPage.prototype.ionViewDidLoad = function () {
+    MenuPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MenuPage');
     };
-    /**
-     * Prompt the user to add a new item. This shows our ItemCreatePage in a
-     * modal and then adds the new item to our data source if the user created one.
-     */
-    ListMasterPage.prototype.addItem = function () {
-        var _this = this;
-        var addModal = this.modalCtrl.create('ItemCreatePage');
-        addModal.onDidDismiss(function (item) {
-            if (item) {
-                _this.items.add(item);
-            }
-        });
-        addModal.present();
-    };
-    /**
-     * Delete an item from the list of items.
-     */
-    ListMasterPage.prototype.deleteItem = function (item) {
-        this.items.delete(item);
-    };
-    /**
-     * Navigate to the detail page for this item.
-     */
-    ListMasterPage.prototype.openItem = function (item) {
-        this.navCtrl.push('ItemDetailPage', {
-            item: item
-        });
-    };
-    ListMasterPage = __decorate([
+    MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list-master',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/list-master/list-master.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>{{ \'LIST_MASTER_TITLE\' | translate }}</ion-title>\n\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addItem()">\n        <ion-icon name="add"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content>\n\n  <ion-list>\n    <ion-item-sliding *ngFor="let item of currentItems">\n      <button ion-item (click)="openItem(item)">\n        <ion-avatar item-start>\n          <img [src]="item.profilePic" />\n        </ion-avatar>\n        <h2>{{item.name}}</h2>\n        <p>{{item.about}}</p>\n        <ion-note item-end *ngIf="item.note">{{item.note}}</ion-note>\n      </button>\n\n      <ion-item-options>\n        <button ion-button color="danger" (click)="deleteItem(item)">\n          {{ \'DELETE_BUTTON\' | translate }}\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/list-master/list-master.html"*/
+            selector: 'page-menu',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/menu/menu.html"*/'<ion-header class="ion-no-border" style="padding: 10px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">\n  \n  <a href="http://localhost:8100/#/profile" style="margin-right: 15px; width: 45px;" >\n    <img src="assets/img/icon4.png" />\n  </a>\n\n  <div style="margin-top: 9px;">\n  <strong>Ille Sutt</strong> (App Dev)<br />\n  Points: 120\n  </div>\n\n  <div style="margin-left: auto; margin-top: 16px;">\n    <a href="http://localhost:8100/#/dashboard" >\n      <img src="assets/img/close.png" style="width: 20px;" />\n    </a>\n\n  </div>\n  \n\n\n</ion-header>\n\n<ion-content style="background-color: #ffffff;">\n\n  <div style="margin:40px;">\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/events">\n        Upcoming Events\n      </a>\n      \n    </div>\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/leaderboard">\n        Games Leaderboard\n      </a>\n      \n    </div>\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/book">\n        Book Club\n      </a>\n      \n    </div>\n\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/erg">\n        US Foods Employee Resource Groups (ERGs)\n      </a>\n    \n    </div>\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/shop">\n        Shop US Foods Swag</div>\n      </a>\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/start">\n        Logout\n      </a>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/menu/menu.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers__["b" /* Items */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */]])
-    ], ListMasterPage);
-    return ListMasterPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], MenuPage);
+    return MenuPage;
 }());
 
-//# sourceMappingURL=list-master.js.map
+//# sourceMappingURL=menu.js.map
 
 /***/ })
 

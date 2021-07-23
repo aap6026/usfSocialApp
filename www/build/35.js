@@ -1,15 +1,14 @@
 webpackJsonp([35],{
 
-/***/ 338:
+/***/ 340:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageModule", function() { return MenuPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Menu2PageModule", function() { return Menu2PageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu__ = __webpack_require__(384);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu2__ = __webpack_require__(388);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,36 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var MenuPageModule = /** @class */ (function () {
-    function MenuPageModule() {
+var Menu2PageModule = /** @class */ (function () {
+    function Menu2PageModule() {
     }
-    MenuPageModule = __decorate([
+    Menu2PageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */],
+                __WEBPACK_IMPORTED_MODULE_2__menu2__["a" /* Menu2Page */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */]),
-                __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__menu2__["a" /* Menu2Page */]),
             ],
-            exports: [
-                __WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */]
-            ]
         })
-    ], MenuPageModule);
-    return MenuPageModule;
+    ], Menu2PageModule);
+    return Menu2PageModule;
 }());
 
-//# sourceMappingURL=menu.module.js.map
+//# sourceMappingURL=menu2.module.js.map
 
 /***/ }),
 
-/***/ 384:
+/***/ 388:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Menu2Page; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -62,38 +56,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var MenuPage = /** @class */ (function () {
-    function MenuPage(navCtrl) {
+/**
+ * Generated class for the Menu2Page page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var Menu2Page = /** @class */ (function () {
+    function Menu2Page(navCtrl, navParams) {
         this.navCtrl = navCtrl;
-        this.rootPage = 'ContentPage';
-        // used for an example of ngFor and navigation
-        this.pages = [
-            { title: 'Sign in', component: 'LoginPage' },
-            { title: 'Signup', component: 'SignupPage' }
-        ];
+        this.navParams = navParams;
     }
-    MenuPage.prototype.ionViewDidLoad = function () {
-        console.log('Hello MenuPage Page');
+    Menu2Page.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad Menu2Page');
     };
-    MenuPage.prototype.openPage = function (page) {
-        // Reset the content nav to have just this page
-        // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(page.component);
-    };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
-    ], MenuPage.prototype, "nav", void 0);
-    MenuPage = __decorate([
+    Menu2Page = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/menu/menu.html"*/'<ion-menu [content]="content" type="overlay">\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-nav #content [root]="rootPage"></ion-nav>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/menu/menu.html"*/
+            selector: 'page-menu2',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/menu2/menu2.html"*/'<ion-header class="ion-no-border" style="padding: 10px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">\n  <a href="http://localhost:8100/#/profile" style="margin-right: 15px; width: 45px;" >\n    <img src="assets/img/icon4.png" />\n  </a>\n\n  <div style="margin-top: 9px;">\n  <strong>Ille Sutt</strong> (App Dev)<br />\n  Points: 120\n  </div>\n\n  <div style="margin-left: auto; margin-top: 16px;">\n    <a href="http://localhost:8100/#/dashboard" >\n      <img src="assets/img/close.png" style="width: 20px;" />\n    </a>\n  </div>\n</ion-header>\n\n<ion-content style="background-color: #ffffff;">\n\n  <div style="margin:40px;">\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/events">\n        Upcoming Events\n      </a>\n      \n    </div>\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/leaderboard">\n        Games Leaderboard\n      </a>\n      \n    </div>\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/book">\n        Book Club\n      </a>\n      \n    </div>\n\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/erg">\n        US Foods Employee Resource Groups (ERGs)\n      </a>\n    \n    </div>\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/shop">\n        Shop US Foods Swag</div>\n      </a>\n    <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 25px 0;">\n      <a href="http://localhost:8100/#/start">\n        Logout\n      </a>\n    </div>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/menu2/menu2.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]])
-    ], MenuPage);
-    return MenuPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], Menu2Page);
+    return Menu2Page;
 }());
 
-//# sourceMappingURL=menu.js.map
+//# sourceMappingURL=menu2.js.map
 
 /***/ })
 

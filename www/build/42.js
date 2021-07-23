@@ -1,14 +1,14 @@
 webpackJsonp([42],{
 
-/***/ 329:
+/***/ 331:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardPageModule", function() { return DashboardPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ErgPageModule", function() { return ErgPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard__ = __webpack_require__(375);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__erg__ = __webpack_require__(379);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,31 +18,31 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DashboardPageModule = /** @class */ (function () {
-    function DashboardPageModule() {
+var ErgPageModule = /** @class */ (function () {
+    function ErgPageModule() {
     }
-    DashboardPageModule = __decorate([
+    ErgPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */],
+                __WEBPACK_IMPORTED_MODULE_2__erg__["a" /* ErgPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__dashboard__["a" /* DashboardPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__erg__["a" /* ErgPage */]),
             ],
         })
-    ], DashboardPageModule);
-    return DashboardPageModule;
+    ], ErgPageModule);
+    return ErgPageModule;
 }());
 
-//# sourceMappingURL=dashboard.module.js.map
+//# sourceMappingURL=erg.module.js.map
 
 /***/ }),
 
-/***/ 375:
+/***/ 379:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ErgPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -57,29 +57,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the DashboardPage page.
+ * Generated class for the ErgPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var DashboardPage = /** @class */ (function () {
-    function DashboardPage(navCtrl, navParams) {
+var ErgPage = /** @class */ (function () {
+    function ErgPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
     }
-    DashboardPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DashboardPage');
+    ErgPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ErgPage');
     };
-    DashboardPage = __decorate([
+    ErgPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dashboard',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/dashboard/dashboard.html"*/'<ion-header class="ion-no-border" style="padding: 20px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">\n\n\n  <ion-title style="text-align: center;">Dashboard</ion-title>\n<!-- \n  <a href="http://localhost:8100/#/dashboard" >\n    <img src="assets/img/home.png" style="width: 20px;" />\n  </a>\n-->\n\n</ion-header>\n\n<ion-content style="background-color: #ffffff;">\n\n  <div style="padding: 40px 40px 20px 40px; display: inline-block; width: 100%"> \n    <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">Featured Events</h2>\n    <a href="http://localhost:8100/#/events" class="more">More →</a>\n  </div>\n\n<div style="overflow-x:scroll; overflow-y:hidden; white-space:nowrap; width: 100%; margin: 0px; display: inline-block;">\n\n\n  <div style=" width: 200px; margin-left: 40px; display: inline-block;">\n    <img src="assets/img/trivia.jpg" />\n    <p class="gray12">Friday, July 21 at 4:00 PM</p>\n    <p class="black14">Trivia Night Summer</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 200px; margin-left: 20px; display: inline-block;">\n    <img src="assets/img/trivia.jpg" />\n    <p class="gray12">Friday, July 21 at 4:00 PM</p>\n    <p class="black14">Trivia Night Summer</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 200px; margin-left: 20px; display: inline-block;">\n    <img src="assets/img/trivia.jpg" />\n    <p class="gray12">Friday, July 21 at 4:00 PM</p>\n    <p class="black14">Trivia Night Summer</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 200px; margin-left: 20px; margin-right: 40px; display: inline-block;">\n    <img src="assets/img/trivia.jpg" />\n    <p class="gray12">Friday, July 21 at 4:00 PM</p>\n    <p class="black14">Trivia Night Summer</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n</div>\n\n<div style="padding: 40px 40px 10px 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">Games Leaderboard</h2>\n  <a href="http://localhost:8100/#/leaderboard" class="more">More →</a>\n</div>\n\n<div style="margin:0 40px 0 40px;">\n  <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">\n    <div style="display: inline-block; font-weight: regular;">1.  App Dev</div>\n    <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2300</div>\n  </div>\n  <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">\n    <div style="display: inline-block; font-weight: regular;">2.  Finance</div>\n    <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2280</div>\n  </div>\n  <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">\n    <div style="display: inline-block; font-weight: regular;">3.  Legal</div>\n    <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">2010</div>\n  </div>\n  <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">\n    <div style="display: inline-block; font-weight: regular;">4.  Marketing</div>\n    <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1943</div>\n  </div>\n  <div style="font-size: 14px; border-bottom: 1px solid #86AB5E; display:block; padding: 15px 0;">\n    <div style="display: inline-block; font-weight: regular;">5.  Sales</div>\n    <div style="display: inline-block; float: right;  font-weight: bold; color: #86AB5E;">1309</div>\n  </div>\n</div>\n\n<div style="padding: 40px 40px 0 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">Upcoming Events</h2>\n  <a href="http://localhost:8100/#/events" class="more">More →</a>\n</div>\n\n<div style="padding: 20px 20px 40px 40px; display: block; width: 100%">\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n  <div style=" width: 100%; margin-bottom: 20px; display:block; height: 75px;">\n    <img src="assets/img/trivia.jpg" style="height: 75px; float: left; margin-right: 20px;" />\n    <p class="gray14">GAME</p>\n    <p class="black14">Summer Trivia Night</p>\n    <p class="gray14">Fri, July 21 at 4 PM</p>\n    <a href="http://localhost:8100/#/trivia" class="greenatag"> <ion-icon name="pricetag"></ion-icon> App Dev</a>\n  </div>\n\n</div>\n\n\n<img src="assets/img/bookclub.png" style="width: 100%; text-align: center;" />\n\n\n<div style="padding: 40px 40px 20px 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">Social Events Calendar</h2>\n  <a href="http://localhost:8100/#/events" class="more">More →</a>\n</div>\n\n<img src="assets/img/calendar.png" style="width: 100%; text-align: center;" />\n\n<!-- Ergs -->\n<div style="padding: 40px 40px 0 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">Popular ERGs</h2>\n  <a href="http://localhost:8100/#/erg" class="more">More →</a>\n</div>\n\n<div style="padding: 0 40px 40px 40px;">\n\n<img src="assets/img/erg3.png" style="width: 100%; margin-top: 20px" />\n<p style="margin-top: 20px;"><strong>Black Resource Utilization Hub</strong> - resource within US Foods for US Foods and for black employees at US Foods... </p>\n<a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n\n\n<img src="assets/img/erg2.png" style="width: 100%; margin-top: 40px" />\n<p style="margin-top: 20px;"><strong>LINK-UP</strong> - mission is to Link Information, Networking & Knowledge (LINK-UP) across the organization to enrich engagement, personal development... </p>\n<a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n    \n<img src="assets/img/erg1.png" style="width: 100%; margin-top: 40px" />\n<p style="margin-top: 20px;"><strong>Women in Network</strong> - founded on the idea that bringing women together in community and offering guidance and insight can help them achieve personal & professional growth... </p>\n<a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n    \n</div>\n\n<!-- SHOP -->\n<div style="padding: 40px 40px 20px 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">Shop US Foods Swag</h2>\n  <a href="http://localhost:8100/#/shop" class="more">More →</a>\n</div>\n\n<div style="overflow-x:scroll; overflow-y:hidden; white-space:nowrap; width: 100%; margin: 20px 0 40px 0px; display: inline-block;">\n\n\n<div style=" width: 200px; margin-left: 40px; display: inline-block;">\n  <img src="assets/img/swag1.png" />\n  <p class="gray12">Clothing</p>\n  <p class="black14">Orange USF Cap</p>\n  <a href="" class="greenatag">$36.00</a>\n</div>\n\n<div style=" width: 200px; margin-left: 20px; display: inline-block;">\n  <img src="assets/img/swag2.png" />\n  <p class="gray12">Clothing</p>\n  <p class="black14">White USF T-shirt</p>\n  <a href="" class="greenatag">$22.00</a>\n</div>\n\n<div style=" width: 200px; margin-left: 20px; display: inline-block;">\n  <img src="assets/img/swag3.png" />\n  <p class="gray12">Office Supply</p>\n  <p class="black14">Gray USF Notebook</p>\n  <a href="" class="greenatag">$18.00</a>\n</div>\n\n<div style=" width: 200px; margin-left: 20px; margin-right: 40px; display: inline-block;">\n  <img src="assets/img/swag4.png" />\n  <p class="gray12">Clothing</p>\n  <p class="black14">Gray 1-Piece Scarf</p>\n  <a href="" class="greenatag">$36.00</a>\n</div>\n\n</div>\n  </ion-content>\n'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/dashboard/dashboard.html"*/,
+            selector: 'page-erg',template:/*ion-inline-start:"/Users/AAP6026/usfSocialApp/src/pages/erg/erg.html"*/'<!--\n  Generated template for the ErgPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="ion-no-border" style="padding: 20px 40px; display: flex;  border-bottom: 1px solid #d8d8d8;">\n  \n  <a href="http://localhost:8100/#/dashboard">\n    <img src="assets/img/back.png" style="width: 20px; " />\n  </a>\n  <ion-title style="text-align: center;">ERGs</ion-title>\n  <a href="http://localhost:8100/#/dashboard" >\n    <img src="assets/img/home.png" style="width: 20px;" />\n  </a>\n\n</ion-header>\n<ion-content style="background-color: #ffffff;">\n\n<div style="padding: 40px 40px 20px 40px; display: inline-block; width: 100%"> \n  <h2 style="padding: 0; margin: 0; font-size: 20px; display: inline-block; font-weight: bold;">US Foods Employee <br />Resource Groups (ERGs):</h2>\n</div> \n\n<div style="padding:0px 40px 40px 40px;">\n\n  <img src="assets/img/erg4.png" style="width: 100%; margin-top: 20px" />\n  <p style="margin-top: 20px;"><strong>ADAPT</strong> – will partner with US Foods to advance awareness of people identifying as having a visible/invisible disability... </p>\n  \n  <a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n\n  \n  <img src="assets/img/erg3.png" style="width: 100%; margin-top: 40px" />\n  <p style="margin-top: 20px;"><strong>Black Resource Utilization Hub</strong> - resource within US Foods for US Foods and for black employees at US Foods... </p>\n  <a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n\n  <p style="margin-top: 40px;"><strong>Collective Asian Network</strong> - foster networking, professional development, mentoring, and leadership opportunities...</p>\n  <a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n\n  <p style="margin-top: 40px;"><strong>Hispanic and Latino ERG</strong> - Unites employees interested in the Hispanic/Latino culture, grow professionally... </p>\n  <a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n\n\n<img src="assets/img/erg2.png" style="width: 100%; margin-top: 40px" />\n<p style="margin-top: 20px;"><strong>LINK-UP</strong> - mission is to Link Information, Networking & Knowledge (LINK-UP) across the organization to enrich engagement, personal development... </p>\n<a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n<span class="graycolor">|</span> \n<a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n\n<p style="margin-top: 40px;"><strong>MERGE (Multigenerational Empowerment Resource Group for Employees) </strong> – Communications channel for associates... </p>\n    <a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>  \n\n<img src="assets/img/erg5.png" style="width: 100%; margin-top: 40px" />\n<p style="margin-top: 20px;"><strong>Pride Alliance</strong> – all-inclusive group of individuals who identify as LGBTQIA+ and Supporters/Allies who will act as a strategic partner within US Foods... </p>\n  <a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n  <span class="graycolor">|</span> \n  <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n\n  <p style="margin-top: 40px;"><strong>Those Who Serve-Military ERG</strong> - Catalyst to enhance the engagement level, professional experiences, and personal development of our members and the US Foods community.  </p>\n    <a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n\n  <img src="assets/img/erg1.png" style="width: 100%; margin-top: 40px" />\n  <p style="margin-top: 20px;"><strong>Women in Network</strong> - founded on the idea that bringing women together in community and offering guidance and insight can help them achieve personal & professional growth... </p>\n    <a href="http://localhost:8100/#/win" class="greenLink">Learn more</a> \n    <span class="graycolor">|</span> \n    <a href="http://localhost:8100/#/winevents" class="greenLink">Upcoming Events</a>\n   \n</div>\n\n</ion-content>'/*ion-inline-end:"/Users/AAP6026/usfSocialApp/src/pages/erg/erg.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
-    ], DashboardPage);
-    return DashboardPage;
+    ], ErgPage);
+    return ErgPage;
 }());
 
-//# sourceMappingURL=dashboard.js.map
+//# sourceMappingURL=erg.js.map
 
 /***/ })
 
